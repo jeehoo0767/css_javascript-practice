@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <div id="logo"><img src="images/해운대빛축제_로고01.png" alt="a" width="200px" ; height="40px" ;></div>
+            <ul>
+                <li>
+                    <a href="#">이용안내</a>
+                    <ul class="sub">
+                        <li><a href="#">submenu</a></li>
+                        <li><a href="#">submenu</a></li>
+                        <li><a href="#">submenu</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">이벤트정보</a>
+                    <ul class="sub">
+                        <li><a href="#">submenu</a></li>
+                        <li><a href="#">submenu</a></li>
+                        <li><a href="#">submenu</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">프로그램</a>
+                    <ul class="sub">
+                        <li><a href="#">submenu</a></li>
+                        <li><a href="#">submenu</a></li>
+                        <li><a href="#">submenu</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">고객센터</a>
+                    <ul class="sub">
+                        <li><a href="#">submenu</a></li>
+                        <li><a href="#">submenu</a></li>
+                        <li><a href="#">submenu</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </header>
+        <section>
+            <div id="article">
+                <img src="images/c1.jpg" alt="a" class="mySlides">
+                <img src="images/c2.jpg" alt="a" class="mySlides">
+                <img src="images/c3.jpg" alt="a" class="mySlides">
+                <span class="article_content">해운대와 함께하는<br> 별빛 축제</span>
+            </div>
+            <div id="aside">
+                <div id="aside_content1">
+                    <div id="notice">
+                        <div id="tapnotice">공지사항</div>
+                        <div id="tapnotice2">갤러리</div>
+                        <ul>
+                            <li>
+                                <div class="nb">[공지] 2019 해운대라꼬 축제</div>
+                            </li>
+                            <li>
+                                <div class="nb">[공지 해운대라꼬 축제 오시는길.</div>
+                            </li>
+                            <li>
+                                <div class="nb">[공지] 2017 해운대라꼬 축제.</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="aside_content2">
+                    <img src="images/banner_01.png" alt="a">
+                </div>
+                <div id="aside_content3">
+                    <img src="images/shortcut_01.png" alt="a">
+                </div>
+            </div>
+            <footer>
+                <div id="footer_logo"><img src="images/해운대빛축제_로고02.png" alt="a" width="200px" ; height="40px" ;></div>
+                <div id="footer_content">
+                    <ul>
+                        <li>개인정보처리방침</li>
+
+                        <li>이메일무단수집거부</li>
+                        <li>찾아오시는길</li>
+                    </ul>
+                    <div id="copy">
+                        Copyright &nbsp; Busan Metropolitan City. All rights reserved
+                    </div>
+                </div>
+            </footer>
+        </section>
+    </div>
+
+    <script>
+        var slideIndex = 0;
+        carousel();
+
+        function carousel() {
+            var x = document.getElementsByClassName("mySlides");
+            for (var i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > x.length) {
+                slideIndex = 1
+            }
+            x[slideIndex - 1].style.display = "block";
+            setTimeout(carousel, 2000); // Change image every 2 seconds
+        }
+
+    </script>
+
+</body>
+
+</html>
