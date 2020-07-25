@@ -1,5 +1,6 @@
 @charset "UTF-8";
-*{
+
+* {
     margin: 0;
     padding: 0;
     border: 0;
@@ -103,13 +104,15 @@ section {
     position: relative;
     overflow: hidden;
 }
-#article img{
+
+#article img {
     position: absolute;
-    display:block;
+    display: block;
     width: 730px;
     height: 350px;
-    
+
 }
+
 .article_content {
     width: 200px;
     height: 100px;
@@ -124,6 +127,7 @@ section {
     position: absolute;
     top: 50%;
     left: 50%;
+    z-index: 2;
     transform: translate(-50%, -50%);
 }
 
@@ -142,10 +146,10 @@ section {
 
 #notice {
     position: relative;
-    top: 50px;
+    top: 30px;
     border: 1px solid #c2e0d8;
     width: 340px;
-    height: 120px;
+    height: 160px;
     display: inline-block;
 }
 
@@ -154,7 +158,7 @@ section {
     position: absolute;
     top: -32.0px;
     left: 30px;
-    z-index: 5;
+    z-index: 1;
     display: inline-block;
     border-bottom: none;
     background-color: #e7f7f7;
@@ -165,10 +169,28 @@ section {
     position: absolute;
     top: -32.0px;
     left: 106px;
-    z-index: 5;
+    z-index: 1;
     display: inline-block;
     border-bottom: none;
     background-color: #e3e3e3;
+}
+
+#tapnotice:hover {
+    cursor: pointer;
+}
+
+#tapnotice2:hover {
+    cursor: pointer;
+}
+#gallery{
+    height: 160px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display:none;
+}
+#gallery img{
+    margin-left: 2px;
 }
 
 #aside_content1 #notice ul {
@@ -179,6 +201,12 @@ section {
 
 ul > li {
     line-height: 30px;
+}
+
+#aside_content1 #notice ul > li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #adadad;
 }
 
 .nb {
@@ -239,4 +267,65 @@ footer {
 #copy {
     margin-top: 10px;
     text-align: center;
+}
+
+#modal {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3;
+
+    font-weight: bold;
+
+}
+
+.modal-overlay {
+    width: 100%;
+    height: 1200px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: blue;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.dark {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.slider {
+    position: relative;
+}
+
+.mySlides {
+    width: 100%;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 48px;
+    position: absolute;
+    z-index: 0;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+.showing {
+    z-index: 1;
+    opacity: 1;
 }
