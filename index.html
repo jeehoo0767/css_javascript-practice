@@ -52,6 +52,8 @@
                 <img src="images/c1.jpg" alt="a" class="mySlides">
                 <img src="images/c2.jpg" alt="a" class="mySlides">
                 <img src="images/c3.jpg" alt="a" class="mySlides">
+            </div>
+            <div id="article_text">
                 <span class="article_content">해운대와 함께하는<br> 별빛 축제</span>
             </div>
             <div id="aside">
@@ -61,7 +63,7 @@
                         <div id="tapnotice2">갤러리</div>
                         <ul>
                             <li>
-                                <div class="nb">[공지] 2019 해운대라꼬 축제</div>
+                                <div class="nb" onclick="openmodal()">[공지] 2019 해운대라꼬 축제</div>
                             </li>
                             <li>
                                 <div class="nb">[공지 해운대라꼬 축제 오시는길.</div>
@@ -94,24 +96,49 @@
                 </div>
             </footer>
         </section>
+        <div id="modal" class="hidden">
+            <div class="modal-overlay"></div>
+            <div class="modal-content">
+                <h1>I'm a modal</h1><button onclick="closemodal()">X</button>
+            </div>
+        </div>
     </div>
 
     <script>
-        var slideIndex = 0;
-        carousel();
+        const SHOWING_CLASS = "showing";
+        const firstSlide = document.querySelector(".mySlides:first-child");
+        const lastSlide = document.querySelector(".mySlides:last-child");
 
-        function carousel() {
-            var x = document.getElementsByClassName("mySlides");
-            for (var i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
+        function slide() {
+            const currentSlide = document.querySelector(`.${SHOWING_CLASS}`);
+            //            alert("currentSlide : " + currentSlide);
+
+            if (currentSlide) { // 만약 현재 슬라이드라면
+                currentSlide.classList.remove(SHOWING_CLASS); // 현재 슬라이드에서 SHOWING_CLASS를 제거한다
+                const nextSlide = currentSlide.nextElementSibling; // 다음 슬라이드를 정의한다.
+
+                if (nextSlide) { //만약 다음 슬라이드가 있다면
+                    nextSlide.classList.add(SHOWING_CLASS); //다음 슬라이드에 SHOWING_CLASS를 붙인다.
+                } else { // 다음 슬라이드가 없다면 => 5번째 슬라이드라면(마지막 슬라이드라면)
+                    firstSlide.classList.add(SHOWING_CLASS); // 첫번째 슬라이드에 SHOWING_CLASS를 붙인다.
+                }
+
+            } else {
+                firstSlide.classList.add(SHOWING_CLASS);
             }
-            slideIndex++;
-            if (slideIndex > x.length) {
-                slideIndex = 1
-            }
-            x[slideIndex - 1].style.display = "block";
-            setTimeout(carousel, 2000); // Change image every 2 seconds
         }
+        slide();
+        setInterval(slide, 3000);
+
+        function openmodal() {
+            document.querySelector("#modal").classList.remove("hidden");
+        }
+
+        function closemodal() {
+            document.querySelector("#modal").classList.add("hidden");
+
+        }
+        document.querySelector(".modal-overlay").addEventListener("click", closemodal);
 
     </script>
 
