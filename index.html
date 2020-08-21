@@ -54,6 +54,12 @@
                     <img src="images/c2.jpg" alt="a" class="mySlides">
                     <img src="images/c3.jpg" alt="a" class="mySlides">
                 </div>
+                <img src="images/c1.jpg" alt="a" class="mySlides">
+                <img src="images/c2.jpg" alt="a" class="mySlides">
+                <img src="images/c3.jpg" alt="a" class="mySlides">
+            </div>
+            <div id="article_text">
+
                 <span class="article_content">해운대와 함께하는<br> 별빛 축제</span>
             </div>
             <div id="aside">
@@ -138,6 +144,18 @@
         function openmodal() {
             document.querySelector("#modal").classList.remove("hidden");
         }
+        slide();
+        setInterval(slide, 3000);
+
+        function openmodal() {
+            document.querySelector("#modal").classList.remove("hidden");
+        }
+
+        function closemodal() {
+            document.querySelector("#modal").classList.add("hidden");
+
+        }
+        document.querySelector(".modal-overlay").addEventListener("click", closemodal);
 
         function closemodal() {
             document.querySelector("#modal").classList.add("hidden");

@@ -110,7 +110,6 @@ section {
     display: block;
     width: 730px;
     height: 350px;
-
 }
 
 .article_content {
@@ -125,10 +124,28 @@ section {
     line-height: 50px;
     border-radius: 20px;
     position: absolute;
+    z-index: 4;
     top: 50%;
     left: 50%;
     z-index: 2;
     transform: translate(-50%, -50%);
+}
+#article_text{
+    width: 730px;
+    height: 350px;
+    position: absolute;
+    top: 20px;
+    left: 260px;
+}
+.mySlides{
+    position: absolute;
+    z-index: 3;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+.showing {
+    z-index: 1;
+    opacity: 1;
 }
 
 #aside {
@@ -268,7 +285,6 @@ footer {
     margin-top: 10px;
     text-align: center;
 }
-
 #modal {
     width: 100%;
     height: 100%;
@@ -290,6 +306,18 @@ footer {
 
 .modal-content {
     position: absolute;
+    z-index: 5;
+    border:1px solid #000;
+    font-weight: bold;
+
+}
+.modal-overlay{
+    width: 100%;
+    height: 1200px;
+    background-color: rgba(0,0,0,0.6);
+}
+.modal-content{
+     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -328,4 +356,7 @@ footer {
 .showing {
     z-index: 1;
     opacity: 1;
+}
+.hidden{
+    display:none;
 }
