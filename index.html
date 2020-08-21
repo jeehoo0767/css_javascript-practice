@@ -108,7 +108,7 @@
             </div>
         </div>
     </div>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         const SHOWING_CLASS = "showing";
         const firstSlide = document.querySelector(".mySlides:first-child");
@@ -148,18 +148,26 @@
         function n_clk() {
             document.getElementById("tapnotice").style.background = "#e7f7f7";
             document.getElementById("tapnotice2").style.background = "#e3e3e3";
-            document.getElementById("notice_list").style.display="block";
+            document.getElementById("notice_list").style.display = "block";
             document.getElementById("gallery").style.display = "none";
         }
 
         function g_clk() {
             document.getElementById("tapnotice2").style.background = "#e7f7f7";
             document.getElementById("tapnotice").style.background = "#e3e3e3";
-            document.getElementById("notice_list").style.display="none";
+            document.getElementById("notice_list").style.display = "none";
             document.getElementById("gallery").style.display = "block";
         }
 
+        $("#mainMenu>li").mouseover(function () {
+            $(this).children("ul").stop().slideToggle(500);
+        });
+
+        $("#mainMenu>li").mouseout(function () {
+            $(this).children("ul").stop().slideToggle(500);
+        });
     </script>
+
 
 </body>
 
