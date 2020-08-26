@@ -70,9 +70,9 @@ header ul li ul li {
     border: none;
 }
 
-header ul li:hover .sub {
+/* header ul li:hover .sub {
     display: block;
-}
+} */
 
 header ul li a:hover {
     height: 40px;
@@ -105,9 +105,13 @@ section {
     overflow: hidden;
 }
 
+#slide{
+    width: 2190px;
+}
+
 #article img {
-    position: absolute;
-    display: block;
+    /* position: absolute; */
+    display: inline-block;
     width: 730px;
     height: 350px;
 }
@@ -138,9 +142,9 @@ section {
     left: 260px;
 }
 .mySlides{
-    position: absolute;
-    z-index: 3;
-    opacity: 0;
+    /* position: absolute; */
+    /* z-index: 3;
+    opacity: 0; */
     transition: all 1s ease-in-out;
 }
 .showing {
@@ -347,10 +351,10 @@ footer {
     align-items: center;
     color: #fff;
     font-size: 48px;
-    position: absolute;
+    /* position: absolute;
     z-index: 0;
     opacity: 0;
-    transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out; */
 }
 
 .showing {
